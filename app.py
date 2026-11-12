@@ -511,24 +511,60 @@ elif section == "Bizcash SCF Training":
             "Refer the transaction to the Compliance Officer, investigate the concerns and obtain the required senior management approval before payment."
         ]
 
-        explanations = [
-            "The Buyer's existing KYC and established relationship support a low Buyer risk rating, subject to the current assessment.",
-            "A newly introduced Beneficiary with no established trading relationship requires further investigation.",
-            "The unexplained change in payment account is a significant transaction red flag.",
-            "The high-risk findings must be escalated. Payment must not proceed before the required review and approval."
-        ]
+    
+            "questions": [
+                {
+                    "question": "What is the primary purpose of FICA?",
+                    "options": [
+                        "To regulate the pricing of business loans.",
+                        "To combat money laundering, terrorist financing and proliferation financing.",
+                        "To regulate employee performance."
+                    ],
+                    "answer": "To combat money laundering, terrorist financing and proliferation financing.",
+                    "explanation": "FICA establishes measures to help prevent and combat financial crime."
+                },
+                {
+                    "question": "What is an employee expected to do when identifying a possible FICA concern?",
+                    "options": [
+                        "Ignore it if the customer is already known.",
+                        "Escalate the concern in accordance with the RMCP.",
+                        "Wait until the next annual review."
+                    ],
+                    "answer": "Escalate the concern in accordance with the RMCP.",
+                    "explanation": "Employees must identify and escalate concerns rather than ignore unusual activity."
+                },
+                {
+                    "question": "Does an existing customer relationship remove the need to monitor customer activity?",
+                    "options": [
+                        "Yes, once KYC is complete no further monitoring is needed.",
+                        "No, ongoing monitoring remains necessary.",
+                        "Yes, provided the customer has a low risk rating."
+                    ],
+                    "answer": "No, ongoing monitoring remains necessary.",
+                    "explanation": "KYC compliance does not remove the obligation to monitor customer behaviour and transactions."
+                },
+                {
+                    "question": "What is the role of the Compliance Officer?",
+                    "options": [
+                        "To review and oversee compliance matters and applicable reporting obligations.",
+                        "To approve every commercial transaction.",
+                        "To replace the responsibilities of all employees."
+                    ],
+                    "answer": "To review and oversee compliance matters and applicable reporting obligations.",
+                    "explanation": "The Compliance Officer oversees the organisation's FICA compliance framework and relevant escalation and reporting processes."
+                },
+                {
+                    "question": "An employee notices that a customer's stated business activities do not match the information provided. What should happen?",
+                    "options": [
+                        "Continue processing because the customer has submitted a KYC form.",
+                        "Ignore the discrepancy unless a payment fails.",
+                        "Investigate and escalate the concern in accordance with the RMCP."
+                    ],
+                    "answer": "Investigate and escalate the concern in accordance with the RMCP.",
+                    "explanation": "Inconsistencies must be reviewed and escalated where necessary. Employees must not ignore potential risk indicators."
+                }
+            ]
 
-        if None in answers:
-            st.warning("Please answer all four questions before submitting.")
-
-        else:
-            score = 0
-
-            st.subheader("Assessment Results")
-
-            for number, answer in enumerate(answers):
-                if answer == correct_answers[number]:
-                    score += 1
                     st.success(f"Question {number + 1}: Correct")
                 else:
                     st.error(f"Question {number + 1}: Incorrect")
@@ -810,22 +846,48 @@ elif section == "2027 Monthly Training Programme":
     st.markdown("### Practical Bizcash Scenario")
     st.info(training["scenario"])
 
-    st.markdown("### Monthly Knowledge Assessment")
-    st.write(training["question"])
 
-    selected_answer = st.radio(
-        "Select your answer:",
-        training["options"],
-        key=f"answer_{selected_month}"
-    )
+        st.markdown("### Monthly Knowledge Assessment")
 
-    if st.button("Submit Monthly Assessment", key=f"submit_{selected_month}"):
-        if selected_answer == training["answer"]:
-            st.success("Correct! You have successfully answered this question.")
-        else:
-            st.error("Incorrect. Please review the training material and try again.")
+        answers = {}
 
-        st.info(training["explanation"])
+        for i, question in enumerate(training["questions"], start=1):
+            st.markdown(f"**Question {i}: {question['question']}**")
+
+            answers[i] = st.radio(
+                "Select your answer:",
+                question["options"],
+                index=None,
+                key=f"answer_{selected_month}_{i}"
+            )
+
+        if st.button("Submit Monthly Assessment", key=f"submit_{selected_month}"):
+
+            if any(answer is None for answer in answers.values()):
+                st.warning("Please answer all five questions before submitting.")
+
+            else:
+                score = 0
+
+                st.markdown("### Assessment Results")
+
+                for i, question in enumerate(training["questions"], start=1):
+
+                    if answers[i] == question["answer"]:
+                        score += 1
+                        st.success(f"Question {i}: Correct")
+                    else:
+                        st.error(f"Question {i}: Incorrect")
+
+                    st.info(question["explanation"])
+
+                st.write(f"**Your score: {score} / 5**")
+
+                if score >= 4:
+                    st.success("Congratulations! You have passed this month's assessment.")
+                else:
+                    st.warning("You have not achieved the required 80%. Please review the training and try again.")
+
 
 elif section == "Transaction Monitoring":
 
