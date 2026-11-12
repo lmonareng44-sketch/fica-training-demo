@@ -553,6 +553,280 @@ elif section == "Bizcash SCF Training":
 # TRANSACTION MONITORING
 # -------------------------
 
+
+elif section == "2027 Monthly Training Programme":
+
+    st.header("2027 Monthly FICA Training Programme")
+
+    st.write("""
+    Monthly employee compliance training for Bizcash and Bizcash SCF.
+    Each month focuses on a different aspect of FICA, AML/CFT/CPF,
+    the RMCP and practical compliance responsibilities.
+    """)
+
+    monthly_topics = {
+        "January 2027": {
+            "topic": "FICA Fundamentals and Employee Responsibilities",
+            "focus": [
+                "Purpose and objectives of FICA.",
+                "Employee responsibilities under the FICA Act and the RMCP.",
+                "Accountability of employees for identifying and escalating concerns.",
+                "Understanding the roles of the Compliance Officer and senior management."
+            ],
+            "scenario": "An employee notices that information supplied by a customer does not match the company's known business activities. The employee must raise the concern rather than ignore it.",
+            "question": "What should an employee do when they identify a possible FICA concern?",
+            "options": [
+                "Ignore it if the customer is already known.",
+                "Escalate the concern in accordance with the RMCP.",
+                "Continue processing without recording the concern."
+            ],
+            "answer": "Escalate the concern in accordance with the RMCP.",
+            "explanation": "Employees must identify and escalate unusual activity and compliance concerns."
+        },
+
+        "February 2027": {
+            "topic": "Customer Due Diligence (CDD)",
+            "focus": [
+                "Identifying and verifying customers.",
+                "Understanding the nature and purpose of the business relationship.",
+                "Identifying directors, representatives and authorised persons.",
+                "Obtaining and reviewing supporting documentation."
+            ],
+            "scenario": "A company submits a KYC form but does not provide current CIPC information or identification documents for its directors.",
+            "question": "What is the appropriate approach?",
+            "options": [
+                "Treat the customer as compliant because a KYC form was received.",
+                "Identify and obtain the outstanding verification information.",
+                "Accept verbal confirmation instead."
+            ],
+            "answer": "Identify and obtain the outstanding verification information.",
+            "explanation": "CDD requires appropriate identification and verification measures."
+        },
+
+        "March 2027": {
+            "topic": "Ultimate Beneficial Ownership (UBO)",
+            "focus": [
+                "Understanding direct and indirect ownership.",
+                "Applying the look-through and dilution method.",
+                "Identifying natural persons who ultimately own or control a customer.",
+                "Reviewing trusts, shareholders and complex ownership structures."
+            ],
+            "scenario": "A company is owned through two intermediate companies. Employees must look through the ownership structure to identify the ultimate natural persons.",
+            "question": "Who can ultimately qualify as a beneficial owner?",
+            "options": [
+                "Only the company listed as the immediate shareholder.",
+                "A natural person who ultimately owns or exercises effective control.",
+                "Any employee of the customer."
+            ],
+            "answer": "A natural person who ultimately owns or exercises effective control.",
+            "explanation": "UBO identification requires looking through ownership and control structures to the relevant natural persons."
+        },
+
+        "April 2027": {
+            "topic": "PEPs, Sanctions and Adverse Media",
+            "focus": [
+                "Understanding domestic and foreign politically exposed persons.",
+                "Identifying family members and known close associates where relevant.",
+                "Understanding targeted financial sanctions (TFS).",
+                "Reviewing adverse media and escalating potential matches."
+            ],
+            "scenario": "Screening identifies a possible PEP match involving a director. Employees must establish whether the match is genuine and follow the applicable risk-based procedures.",
+            "question": "What should happen when a potential sanctions match is identified?",
+            "options": [
+                "Ignore it if the customer has a low risk rating.",
+                "Escalate and investigate the potential match in accordance with the RMCP.",
+                "Automatically treat every similar name as a confirmed match."
+            ],
+            "answer": "Escalate and investigate the potential match in accordance with the RMCP.",
+            "explanation": "Potential matches must be investigated and handled in accordance with applicable TFS obligations and the RMCP."
+        },
+
+        "May 2027": {
+            "topic": "Risk-Based Approach and Enhanced Due Diligence",
+            "focus": [
+                "Understanding customer risk factors.",
+                "Applying customer risk ratings.",
+                "Identifying circumstances requiring Enhanced Due Diligence (EDD).",
+                "Applying appropriate ongoing monitoring and escalation."
+            ],
+            "scenario": "A customer operates in a higher-risk sector and has an unusual ownership structure. Additional information may be required before proceeding.",
+            "question": "What determines the level of due diligence required?",
+            "options": [
+                "The identified money laundering and terrorist financing risks.",
+                "The customer's preference.",
+                "The amount of time available to process the application."
+            ],
+            "answer": "The identified money laundering and terrorist financing risks.",
+            "explanation": "The extent of CDD, EDD and ongoing monitoring must be proportionate to the identified risk."
+        },
+
+        "June 2027": {
+            "topic": "Source of Funds and Source of Wealth",
+            "focus": [
+                "Distinguishing source of funds from source of wealth.",
+                "Understanding the customer's business income and funding arrangements.",
+                "Identifying unexplained third-party funding.",
+                "Obtaining supporting information where required by the risk assessment."
+            ],
+            "scenario": "A business requests finance but the proposed funding arrangement involves payments from an unrelated third party without a reasonable explanation.",
+            "question": "What is the appropriate response?",
+            "options": [
+                "Accept the arrangement without further review.",
+                "Investigate the source and purpose of the funds and escalate concerns.",
+                "Assume the payment is legitimate because it comes from a bank account."
+            ],
+            "answer": "Investigate the source and purpose of the funds and escalate concerns.",
+            "explanation": "Unexplained third-party funding must be considered and investigated in accordance with the RMCP."
+        },
+
+        "July 2027": {
+            "topic": "Transaction Monitoring and Suspicious Activity",
+            "focus": [
+                "Identifying transactions inconsistent with the customer's business.",
+                "Recognising unusual deposits, withdrawals and payment patterns.",
+                "Identifying unexplained third-party payments.",
+                "Escalating suspicious or unusual activity."
+            ],
+            "scenario": "A customer whose normal business activity involves local trading suddenly receives unexplained payments from unrelated parties.",
+            "question": "What should the employee do?",
+            "options": [
+                "Ignore the activity because the customer is KYC compliant.",
+                "Escalate the unusual activity for investigation.",
+                "Wait until the customer requests another facility."
+            ],
+            "answer": "Escalate the unusual activity for investigation.",
+            "explanation": "KYC compliance does not remove the requirement for ongoing transaction monitoring."
+        },
+
+        "August 2027": {
+            "topic": "Bizcash Products and Product-Specific FICA Risks",
+            "focus": [
+                "Understanding Invoice Discounting, Business Loans and Term Loans.",
+                "Understanding overdraft facilities and expected account activity.",
+                "Assessing the purpose and intended use of finance.",
+                "Identifying unusual payment instructions and third-party transactions."
+            ],
+            "scenario": "A business requests invoice discounting against an invoice that appears inconsistent with its normal trading activities.",
+            "question": "What should employees consider?",
+            "options": [
+                "Only whether the customer has completed KYC.",
+                "Whether the invoice is genuine and the transaction makes commercial sense.",
+                "Only whether the finance amount is approved."
+            ],
+            "answer": "Whether the invoice is genuine and the transaction makes commercial sense.",
+            "explanation": "Employees must understand the customer's business and assess the underlying commercial transaction."
+        },
+
+        "September 2027": {
+            "topic": "Bizcash SCF and Transaction Risk Assessment",
+            "focus": [
+                "Understanding Buyer Risk, Beneficiary Risk and Transaction Risk.",
+                "Verifying the nominated Beneficiary.",
+                "Checking invoices, quotations and purchase orders.",
+                "Understanding escalation and senior management approval requirements."
+            ],
+            "scenario": "An existing Buyer nominates a new Beneficiary and requests payment into a bank account different from the account reflected in the original supporting documentation.",
+            "question": "What should happen before payment?",
+            "options": [
+                "Proceed because the Buyer is already KYC compliant.",
+                "Investigate the change and obtain the required review and approval.",
+                "Proceed and investigate afterwards."
+            ],
+            "answer": "Investigate the change and obtain the required review and approval.",
+            "explanation": "A high-risk finding in any SCF risk component requires Compliance Officer review and senior management approval before payment."
+        },
+
+        "October 2027": {
+            "topic": "Targeted Financial Sanctions and Proliferation Financing",
+            "focus": [
+                "Understanding TFS screening obligations.",
+                "Recognising potential proliferation financing risks.",
+                "Understanding dual-use goods and relevant trade risks.",
+                "Escalating potential matches and concerns."
+            ],
+            "scenario": "A transaction involves goods that may have dual-use applications and a counterparty connected to a higher-risk jurisdiction.",
+            "question": "What is the appropriate approach?",
+            "options": [
+                "Ignore the concern because the transaction is commercial.",
+                "Assess the relevant risks, conduct required screening and escalate concerns.",
+                "Proceed without additional checks if the invoice is genuine."
+            ],
+            "answer": "Assess the relevant risks, conduct required screening and escalate concerns.",
+            "explanation": "Commercial transactions must still be assessed for relevant sanctions and proliferation financing risks."
+        },
+
+        "November 2027": {
+            "topic": "FIC Reporting, goAML and Record Keeping",
+            "focus": [
+                "Understanding internal suspicious activity escalation.",
+                "Understanding the Compliance Officer's reporting responsibilities.",
+                "Recognising when suspicious and other reportable transactions may arise.",
+                "Maintaining records in accordance with the RMCP and applicable requirements."
+            ],
+            "scenario": "An employee identifies suspicious activity during a customer review and receives additional information supporting the concern.",
+            "question": "What should the employee do?",
+            "options": [
+                "Discuss the suspicion with the customer.",
+                "Escalate the concern internally to the Compliance Officer.",
+                "Delete the information if the transaction has already taken place."
+            ],
+            "answer": "Escalate the concern internally to the Compliance Officer.",
+            "explanation": "Employees must follow internal escalation procedures. Reporting decisions are handled by the authorised responsible person."
+        },
+
+        "December 2027": {
+            "topic": "RMCP Review, Compliance Accountability and Annual Refresher",
+            "focus": [
+                "Reviewing key RMCP requirements.",
+                "Understanding employee responsibilities and escalation procedures.",
+                "Revisiting customer and transaction risk assessments.",
+                "Identifying lessons learned and areas requiring further training."
+            ],
+            "scenario": "An employee discovers that a customer risk profile has changed since onboarding, but the customer has not yet been reassessed.",
+            "question": "What should happen?",
+            "options": [
+                "Retain the original rating indefinitely.",
+                "Review the changed circumstances and update the risk assessment where required.",
+                "Wait until the next annual training session."
+            ],
+            "answer": "Review the changed circumstances and update the risk assessment where required.",
+            "explanation": "Customer risk profiles and ongoing monitoring must be reviewed when relevant circumstances change."
+        }
+    }
+
+    selected_month = st.selectbox(
+        "Select monthly training session",
+        list(monthly_topics.keys())
+    )
+
+    training = monthly_topics[selected_month]
+
+    st.subheader(training["topic"])
+
+    st.markdown("### Monthly Training Focus")
+    for item in training["focus"]:
+        st.markdown(f"- {item}")
+
+    st.markdown("### Practical Bizcash Scenario")
+    st.info(training["scenario"])
+
+    st.markdown("### Monthly Knowledge Assessment")
+    st.write(training["question"])
+
+    selected_answer = st.radio(
+        "Select your answer:",
+        training["options"],
+        key=f"answer_{selected_month}"
+    )
+
+    if st.button("Submit Monthly Assessment", key=f"submit_{selected_month}"):
+        if selected_answer == training["answer"]:
+            st.success("Correct! You have successfully answered this question.")
+        else:
+            st.error("Incorrect. Please review the training material and try again.")
+
+        st.info(training["explanation"])
+
 elif section == "Transaction Monitoring":
 
     st.header("Module 6: Transaction Monitoring")
