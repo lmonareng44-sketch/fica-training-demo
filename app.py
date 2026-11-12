@@ -148,6 +148,55 @@ elif section == "Customer Due Diligence":
     supporting documents, further verification and more frequent
     monitoring in accordance with the RMCP.
     """)
+    st.subheader("Practical KYC Requirements")
+
+    st.markdown("""
+    Employees must ensure that the following information is obtained
+    and verified, where applicable:
+
+    **Company and Close Corporation**
+    - Current CIPC documents.
+    - Identification documents of directors.
+    - Proof of residential address for relevant individuals.
+    - Company nature and purpose of the business relationship.
+    - Shareholding structure and independent shareholding confirmation.
+    - Ultimate Beneficial Owner (UBO) declaration.
+    - Source of funds and source of wealth, where required.
+    - Details of authorised representatives.
+
+    **Trusts**
+    - Original trust deed and any amendments.
+    - Letters of Authority.
+    - Details of trustees, founders and beneficiaries.
+    - Identification and verification of relevant natural persons.
+    - Understanding of the trust's ownership and control structure.
+
+    **Beneficial Ownership**
+    - UBOs must be natural persons.
+    - Apply the applicable ownership and control assessment.
+    - Use the dilution method to assess indirect ownership.
+    - Consider the applicable 5% ownership threshold under PCC 59.
+    - Identify individuals exercising effective control, where applicable.
+
+    **Screening Requirements**
+    - PEP and RCA screening.
+    - Targeted Financial Sanctions (TFS) screening.
+    - Adverse-media screening.
+    - Investigate potential matches and escalate concerns.
+
+    **Important**
+    Incomplete or outdated KYC information must be followed up.
+    Higher-risk customers may require additional information and
+    Enhanced Due Diligence (EDD), in accordance with the RMCP.
+    """)
+
+    st.info("""
+    Employees must not mark a customer as KYC compliant simply
+    because documents have been received. The information must
+    be reviewed, verified and assessed against the applicable
+    FICA requirements and RMCP.
+    """)
+
 
 # -------------------------
 # RISK MANAGEMENT
