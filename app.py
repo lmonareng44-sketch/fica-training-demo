@@ -45,7 +45,7 @@ if section == "Home":
 
     This platform is designed to help employees understand their
     responsibilities under the Financial Intelligence Centre Act (FICA),
-    the Risk Management and Compliance Plan (RMCP), and applicable
+    the  and Compliance Plan (RMCP), and applicable
     AML/CFT/CPF requirements.
     """)
 
@@ -199,7 +199,7 @@ elif section == "Customer Due Diligence":
 
 
 # -------------------------
-# RISK MANAGEMENT
+# 
 # -------------------------
 
 elif section == "Risk Management":
@@ -268,6 +268,45 @@ elif section == "Bizcash Products":
     of the finance and whether the proposed transaction makes
     commercial sense.
     """)
+
+    st.subheader("Product-Specific FICA Risks and Controls")
+
+    product_controls = {
+        "Invoice Discounting": [
+            "Verify that the invoice is genuine and relates to an actual commercial transaction.",
+            "Check the customer, debtor and beneficiary details.",
+            "Look out for duplicate, inflated or altered invoices.",
+            "Investigate unusual payment instructions or changes to bank accounts."
+        ],
+        "Business Loans": [
+            "Understand the purpose of the loan and how the funds will be used.",
+            "Assess whether the proposed use of funds is consistent with the customer's business.",
+            "Consider the source of repayment and source of funds.",
+            "Escalate unusual funding requests or unexplained third-party payments."
+        ],
+        "Overdraft Facilities": [
+            "Understand the expected use of the overdraft facility.",
+            "Monitor account activity against the customer's normal business operations.",
+            "Investigate unusual deposits, withdrawals or third-party transactions.",
+            "Escalate activity that is inconsistent with the customer's business profile."
+        ],
+        "Term Loans": [
+            "Understand the purpose and intended use of the finance.",
+            "Consider whether the loan amount is reasonable for the stated business purpose.",
+            "Assess the source of repayment.",
+            "Investigate unexplained changes in repayment arrangements."
+        ]
+    }
+
+    for product, controls in product_controls.items():
+        with st.expander(product):
+            for control in controls:
+                st.write("- " + control)
+
+    st.info(
+        "Employees must apply the relevant RMCP controls and escalate "
+        "unusual activity or concerns to the Compliance Officer."
+    )
 
 # -------------------------
 # BIZCASH SCF
