@@ -512,7 +512,7 @@ elif section == "Bizcash SCF Training":
         ]
 
     
-            "questions": [
+        "questions": [
                 {
                     "question": "What is the primary purpose of FICA?",
                     "options": [
@@ -610,14 +610,58 @@ elif section == "2027 Monthly Training Programme":
                 "Understanding the roles of the Compliance Officer and senior management."
             ],
             "scenario": "An employee notices that information supplied by a customer does not match the company's known business activities. The employee must raise the concern rather than ignore it.",
-            "question": "What should an employee do when they identify a possible FICA concern?",
-            "options": [
-                "Ignore it if the customer is already known.",
-                "Escalate the concern in accordance with the RMCP.",
-                "Continue processing without recording the concern."
-            ],
-            "answer": "Escalate the concern in accordance with the RMCP.",
-            "explanation": "Employees must identify and escalate unusual activity and compliance concerns."
+            "questions": [
+                {
+                    "question": "What is the main purpose of FICA?",
+                    "options": [
+                        "To regulate business profits.",
+                        "To combat money laundering, terrorist financing and proliferation financing.",
+                        "To regulate employee salaries."
+                    ],
+                    "answer": "To combat money laundering, terrorist financing and proliferation financing.",
+                    "explanation": "FICA helps prevent and combat financial crime."
+                },
+                {
+                    "question": "What must an employee do when they identify suspicious customer activity?",
+                    "options": [
+                        "Ignore it if the customer is known.",
+                        "Report and escalate the concern in accordance with the RMCP.",
+                        "Wait until the next annual review."
+                    ],
+                    "answer": "Report and escalate the concern in accordance with the RMCP.",
+                    "explanation": "Employees must identify and escalate concerns rather than ignore unusual activity."
+                },
+                {
+                    "question": "Does an existing customer relationship remove the need for ongoing monitoring?",
+                    "options": [
+                        "Yes, once KYC is complete, monitoring is no longer required.",
+                        "No, ongoing monitoring remains necessary.",
+                        "Only high-value customers must be monitored."
+                    ],
+                    "answer": "No, ongoing monitoring remains necessary.",
+                    "explanation": "Customer activity must continue to be monitored throughout the business relationship."
+                },
+                {
+                    "question": "Who is responsible for following the company's RMCP?",
+                    "options": [
+                        "Only the Compliance Officer.",
+                        "Only senior management.",
+                        "All employees, according to their responsibilities."
+                    ],
+                    "answer": "All employees, according to their responsibilities.",
+                    "explanation": "FICA compliance is a responsibility shared across the business."
+                },
+                {
+                    "question": "What should an employee do if information supplied by a customer does not match the known nature of the business?",
+                    "options": [
+                        "Continue processing without raising the issue.",
+                        "Raise the concern and escalate it in accordance with the RMCP.",
+                        "Automatically reject the customer."
+                    ],
+                    "answer": "Raise the concern and escalate it in accordance with the RMCP.",
+                    "explanation": "Unusual or inconsistent information must be investigated and escalated."
+                }
+            ]
         },
 
         "February 2027": {
