@@ -362,6 +362,53 @@ elif section == "Bizcash SCF Training":
     - Duplicate or altered supporting documents.
     - Unusual deviations from historical transactions.
     """)
+    st.subheader("SCF Transaction Risk Assessment – Practical Process")
+
+    st.markdown("""
+    Every SCF transaction must be assessed before payment.
+    Employees must consider the Buyer, the nominated Beneficiary
+    and the underlying commercial transaction separately.
+
+    **Step 1: Assess Buyer Risk**
+    - Review the Buyer's existing KYC information and risk rating.
+    - Consider the nature of the Buyer's business and normal trading activities.
+    - Identify any unusual behaviour, changes in business activity or concerns.
+    - Escalate any adverse findings or unexplained activity.
+
+    **Step 2: Assess Beneficiary Risk**
+    - Verify the identity and business details of the nominated Beneficiary.
+    - Understand the Beneficiary's relationship with the Buyer.
+    - Consider whether the Beneficiary is a related party.
+    - Check for relevant PEP, sanctions and adverse-media concerns.
+    - Investigate unusual or unexplained changes to Beneficiary details.
+
+    **Step 3: Assess Transaction Risk**
+    - Verify the underlying invoice, quotation or purchase order.
+    - Confirm that the goods or services are consistent with the parties' businesses.
+    - Assess whether the transaction value and commercial purpose make sense.
+    - Look for duplicate, altered, inflated or fictitious supporting documents.
+    - Identify unusual payment instructions or deviations from previous transactions.
+
+    **Step 4: Determine the Overall SCF Risk Rating**
+    - Assess and record the Buyer Risk, Beneficiary Risk and Transaction Risk separately.
+    - Consider the findings of all three assessments when determining the overall risk.
+    - A high-risk rating in any one component results in an overall high SCF risk rating.
+
+    **Step 5: Escalation and Approval**
+    - High-risk SCF transactions must be referred to the Compliance Officer for review.
+    - Senior management approval is required before payment.
+    - Any concerns must be documented and resolved in accordance with the RMCP.
+    - Employees must not proceed with payment before the required review and approval.
+
+    """)
+
+    st.info("""
+    Important: Completing the transaction assessment is not simply
+    an administrative exercise. Employees must understand the
+    commercial transaction, identify potential risks and ensure
+    that the required approvals are obtained before payment.
+    """)
+
 
     st.subheader("SCF Red Flags")
 
