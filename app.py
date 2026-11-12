@@ -423,6 +423,131 @@ elif section == "Bizcash SCF Training":
     - Repayments from unrelated third parties.
     """)
 
+    # ------------------------------
+    # SCF PRACTICAL CASE STUDY
+    # ------------------------------
+
+    st.subheader("SCF Practical Case Study")
+
+    st.write("""
+    **Scenario:**
+
+    An existing Bizcash SCF Buyer requests financing of R450,000
+    against an invoice for machinery parts.
+
+    The Buyer has an established relationship with Bizcash, has
+    completed KYC and has a low existing customer risk rating.
+
+    During the transaction review, the following is identified:
+
+    - The Beneficiary is being introduced for the first time.
+    - The Buyer has not previously conducted business with this Beneficiary.
+    - The invoice and purchase order contain matching descriptions and values.
+    - The bank account provided for payment differs from the account
+      reflected on the original supporting documentation.
+    - No satisfactory explanation has been provided for the change.
+
+    **Your task:** Assess the risks and decide whether the transaction
+    can proceed.
+    """)
+
+    st.info("Complete all four questions and submit your answers.")
+
+    with st.form("scf_case_study_form"):
+
+        q1 = st.radio(
+            "Question 1: How would you assess the Buyer's risk?",
+            [
+                "Low risk – the Buyer has an established relationship and completed KYC.",
+                "High risk – every SCF transaction must automatically be high risk.",
+                "No assessment is required."
+            ],
+            index=None
+        )
+
+        q2 = st.radio(
+            "Question 2: What is the main Beneficiary risk?",
+            [
+                "There is no risk because the Buyer nominated the Beneficiary.",
+                "High risk – the Beneficiary is new and has no established trading relationship with the Buyer.",
+                "Low risk – the Beneficiary has supplied an invoice."
+            ],
+            index=None
+        )
+
+        q3 = st.radio(
+            "Question 3: What is the main Transaction risk?",
+            [
+                "There is no risk because the invoice and purchase order match.",
+                "High risk – the payment account differs from the original supporting documentation and remains unexplained.",
+                "Low risk – the transaction value is R450,000."
+            ],
+            index=None
+        )
+
+        q4 = st.radio(
+            "Question 4: What should happen before payment?",
+            [
+                "Proceed because the Buyer is already KYC compliant.",
+                "Proceed and investigate the account change afterwards.",
+                "Refer the transaction to the Compliance Officer, investigate the concerns and obtain the required senior management approval before payment."
+            ],
+            index=None
+        )
+
+        submitted = st.form_submit_button("Submit Assessment")
+
+    if submitted:
+
+        answers = [
+            q1, q2, q3, q4
+        ]
+
+        correct_answers = [
+            "Low risk – the Buyer has an established relationship and completed KYC.",
+            "High risk – the Beneficiary is new and has no established trading relationship with the Buyer.",
+            "High risk – the payment account differs from the original supporting documentation and remains unexplained.",
+            "Refer the transaction to the Compliance Officer, investigate the concerns and obtain the required senior management approval before payment."
+        ]
+
+        explanations = [
+            "The Buyer's existing KYC and established relationship support a low Buyer risk rating, subject to the current assessment.",
+            "A newly introduced Beneficiary with no established trading relationship requires further investigation.",
+            "The unexplained change in payment account is a significant transaction red flag.",
+            "The high-risk findings must be escalated. Payment must not proceed before the required review and approval."
+        ]
+
+        if None in answers:
+            st.warning("Please answer all four questions before submitting.")
+
+        else:
+            score = 0
+
+            st.subheader("Assessment Results")
+
+            for number, answer in enumerate(answers):
+                if answer == correct_answers[number]:
+                    score += 1
+                    st.success(f"Question {number + 1}: Correct")
+                else:
+                    st.error(f"Question {number + 1}: Incorrect")
+
+                st.write(explanations[number])
+
+            st.write(f"**Your score: {score} / 4**")
+
+            if score == 4:
+                st.success("Excellent! You have correctly identified the SCF risks and escalation requirements.")
+            elif score >= 2:
+                st.warning("Good attempt. Review the explanations and revisit the SCF risk assessment process.")
+            else:
+                st.error("Further training is required. Please revisit the SCF training module.")
+
+            st.info(
+                "Remember: A high-risk rating in any one of the three "
+                "SCF risk components results in an overall high SCF risk rating."
+            )
+
 # -------------------------
 # TRANSACTION MONITORING
 # -------------------------
