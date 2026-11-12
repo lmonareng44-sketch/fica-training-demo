@@ -511,60 +511,6 @@ elif section == "Bizcash SCF Training":
             "Refer the transaction to the Compliance Officer, investigate the concerns and obtain the required senior management approval before payment."
         ]
 
-    
-        "questions": [
-                {
-                    "question": "What is the primary purpose of FICA?",
-                    "options": [
-                        "To regulate the pricing of business loans.",
-                        "To combat money laundering, terrorist financing and proliferation financing.",
-                        "To regulate employee performance."
-                    ],
-                    "answer": "To combat money laundering, terrorist financing and proliferation financing.",
-                    "explanation": "FICA establishes measures to help prevent and combat financial crime."
-                },
-                {
-                    "question": "What is an employee expected to do when identifying a possible FICA concern?",
-                    "options": [
-                        "Ignore it if the customer is already known.",
-                        "Escalate the concern in accordance with the RMCP.",
-                        "Wait until the next annual review."
-                    ],
-                    "answer": "Escalate the concern in accordance with the RMCP.",
-                    "explanation": "Employees must identify and escalate concerns rather than ignore unusual activity."
-                },
-                {
-                    "question": "Does an existing customer relationship remove the need to monitor customer activity?",
-                    "options": [
-                        "Yes, once KYC is complete no further monitoring is needed.",
-                        "No, ongoing monitoring remains necessary.",
-                        "Yes, provided the customer has a low risk rating."
-                    ],
-                    "answer": "No, ongoing monitoring remains necessary.",
-                    "explanation": "KYC compliance does not remove the obligation to monitor customer behaviour and transactions."
-                },
-                {
-                    "question": "What is the role of the Compliance Officer?",
-                    "options": [
-                        "To review and oversee compliance matters and applicable reporting obligations.",
-                        "To approve every commercial transaction.",
-                        "To replace the responsibilities of all employees."
-                    ],
-                    "answer": "To review and oversee compliance matters and applicable reporting obligations.",
-                    "explanation": "The Compliance Officer oversees the organisation's FICA compliance framework and relevant escalation and reporting processes."
-                },
-                {
-                    "question": "An employee notices that a customer's stated business activities do not match the information provided. What should happen?",
-                    "options": [
-                        "Continue processing because the customer has submitted a KYC form.",
-                        "Ignore the discrepancy unless a payment fails.",
-                        "Investigate and escalate the concern in accordance with the RMCP."
-                    ],
-                    "answer": "Investigate and escalate the concern in accordance with the RMCP.",
-                    "explanation": "Inconsistencies must be reviewed and escalated where necessary. Employees must not ignore potential risk indicators."
-                }
-            ]
-
                     st.success(f"Question {number + 1}: Correct")
                 else:
                     st.error(f"Question {number + 1}: Incorrect")
