@@ -12,7 +12,7 @@ st.set_page_config(
 # -------------------------
 
 st.title("🏦 Bizcash FICA & RMCP Training Platform")
-st.caption("Employee Compliance Training | 2026")
+st.caption("Employee Compliance Training | 2027")
 
 st.sidebar.title("Training Menu")
 
@@ -25,6 +25,7 @@ section = st.sidebar.radio(
         "Risk Management",
         "Bizcash Products",
         "Bizcash SCF Training",
+        "2027 Monthly Training Programme",
         "Transaction Monitoring",
         "Targeted Financial Sanctions",
         "Knowledge Assessment",
